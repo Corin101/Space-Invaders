@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gamePanel = new System.Windows.Forms.Panel();
+            this.scoreLabel = new System.Windows.Forms.Label();
+            this.enemy03 = new System.Windows.Forms.PictureBox();
+            this.enemy02 = new System.Windows.Forms.PictureBox();
+            this.enemy01 = new System.Windows.Forms.PictureBox();
             this.playerChar = new System.Windows.Forms.PictureBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.enemy01 = new System.Windows.Forms.PictureBox();
-            this.enemy02 = new System.Windows.Forms.PictureBox();
-            this.enemy03 = new System.Windows.Forms.PictureBox();
-            this.scoreLabel = new System.Windows.Forms.Label();
             this.gamePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.playerChar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy01)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy03)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemy02)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemy01)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerChar)).BeginInit();
             this.SuspendLayout();
             // 
             // gamePanel
@@ -56,6 +56,44 @@
             this.gamePanel.Size = new System.Drawing.Size(1313, 766);
             this.gamePanel.TabIndex = 0;
             // 
+            // scoreLabel
+            // 
+            this.scoreLabel.AutoSize = true;
+            this.scoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.scoreLabel.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.scoreLabel.Location = new System.Drawing.Point(33, 32);
+            this.scoreLabel.Name = "scoreLabel";
+            this.scoreLabel.Size = new System.Drawing.Size(77, 20);
+            this.scoreLabel.TabIndex = 4;
+            this.scoreLabel.Text = "Score:: 0";
+            // 
+            // enemy03
+            // 
+            this.enemy03.BackColor = System.Drawing.Color.Gold;
+            this.enemy03.Location = new System.Drawing.Point(479, 0);
+            this.enemy03.Name = "enemy03";
+            this.enemy03.Size = new System.Drawing.Size(100, 20);
+            this.enemy03.TabIndex = 3;
+            this.enemy03.TabStop = false;
+            // 
+            // enemy02
+            // 
+            this.enemy02.BackColor = System.Drawing.Color.Maroon;
+            this.enemy02.Location = new System.Drawing.Point(879, 0);
+            this.enemy02.Name = "enemy02";
+            this.enemy02.Size = new System.Drawing.Size(50, 50);
+            this.enemy02.TabIndex = 2;
+            this.enemy02.TabStop = false;
+            // 
+            // enemy01
+            // 
+            this.enemy01.BackColor = System.Drawing.Color.Red;
+            this.enemy01.Location = new System.Drawing.Point(690, 0);
+            this.enemy01.Name = "enemy01";
+            this.enemy01.Size = new System.Drawing.Size(20, 50);
+            this.enemy01.TabIndex = 1;
+            this.enemy01.TabStop = false;
+            // 
             // playerChar
             // 
             this.playerChar.BackColor = System.Drawing.Color.ForestGreen;
@@ -70,44 +108,6 @@
             this.timer.Interval = 10;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // enemy01
-            // 
-            this.enemy01.BackColor = System.Drawing.Color.Red;
-            this.enemy01.Location = new System.Drawing.Point(690, 0);
-            this.enemy01.Name = "enemy01";
-            this.enemy01.Size = new System.Drawing.Size(20, 50);
-            this.enemy01.TabIndex = 1;
-            this.enemy01.TabStop = false;
-            // 
-            // enemy02
-            // 
-            this.enemy02.BackColor = System.Drawing.Color.Maroon;
-            this.enemy02.Location = new System.Drawing.Point(879, 0);
-            this.enemy02.Name = "enemy02";
-            this.enemy02.Size = new System.Drawing.Size(50, 50);
-            this.enemy02.TabIndex = 2;
-            this.enemy02.TabStop = false;
-            // 
-            // enemy03
-            // 
-            this.enemy03.BackColor = System.Drawing.Color.Gold;
-            this.enemy03.Location = new System.Drawing.Point(479, 0);
-            this.enemy03.Name = "enemy03";
-            this.enemy03.Size = new System.Drawing.Size(100, 20);
-            this.enemy03.TabIndex = 3;
-            this.enemy03.TabStop = false;
-            // 
-            // scoreLabel
-            // 
-            this.scoreLabel.AutoSize = true;
-            this.scoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.scoreLabel.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.scoreLabel.Location = new System.Drawing.Point(33, 32);
-            this.scoreLabel.Name = "scoreLabel";
-            this.scoreLabel.Size = new System.Drawing.Size(77, 20);
-            this.scoreLabel.TabIndex = 4;
-            this.scoreLabel.Text = "Score:: 0";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -121,10 +121,10 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.gamePanel.ResumeLayout(false);
             this.gamePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.playerChar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy01)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy02)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy03)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemy02)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemy01)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerChar)).EndInit();
             this.ResumeLayout(false);
 
         }

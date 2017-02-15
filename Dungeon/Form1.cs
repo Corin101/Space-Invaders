@@ -20,13 +20,14 @@ namespace Dungeon
         int speed = 5;
         int[] enemySpeed = {0,10,20,13,15,7,25};
         int score = 0;
+        List<PictureBox> enemies;
 
         public Form1()
         {
             InitializeComponent();
             timer.Enabled = true;                           // start the timer (game)
             this.FormBorderStyle = FormBorderStyle.None;    // remove boarders
-            this.TopMost = true;                            // bring frame to frnt
+          //  this.TopMost = true;                            // bring frame to frnt
             this.Bounds = Screen.PrimaryScreen.Bounds;      // game in full screen
             Cursor.Hide();
             randomGenerator = new Random();
@@ -34,6 +35,7 @@ namespace Dungeon
             playerChar.Left = Screen.PrimaryScreen.Bounds.Size.Width / 2 - playerChar.Width;
             scoreLabel.Top = Screen.PrimaryScreen.Bounds.Height / 30;
             scoreLabel.Left = Screen.PrimaryScreen.Bounds.Width / 30;
+            LoadEnemies();
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -43,10 +45,38 @@ namespace Dungeon
             if (playerChar.Top > gamePanel.Top) {  if (moveUp == true) { playerChar.Top -= speed; } }
             if (playerChar.Bottom < gamePanel.Bottom) { if (moveDown == true) { playerChar.Top += speed; } }
 
-            EnemyMove(enemy01, 1);
-            EnemyMove(enemy02, 2);
-            EnemyMove(enemy03, 3);
+
+            foreach (PictureBox enemy in enemies)
+            {
+                EnemyMove(enemy, enemies.IndexOf(enemy) + 1);
+                if (CollisionTest(enemy))
+                {
+                    if (playerChar.BackColor == Color.Ivory)
+                        timer.Enabled = false;
+                    else
+                    {
+                        playerChar.BackColor = Color.Ivory;
+                        EnemyInitalTopPosition(enemy, enemies.IndexOf(enemy) + 1);
+                    }
+                }
+            }
+            
+
             scoreLabel.Text = "Score:: " + score;
+        }
+
+        private bool CollisionTest(PictureBox enemy)
+        {
+            if (enemy.Bounds.IntersectsWith(playerChar.Bounds))
+                return true;
+            return false;
+        }
+        private void LoadEnemies()
+        {
+            enemies = new List<PictureBox>();
+            enemies.Add(enemy01);
+            enemies.Add(enemy02);
+            enemies.Add(enemy03);
         }
 
         private void EnemyMove(PictureBox enemy, int position)
